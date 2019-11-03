@@ -15,7 +15,7 @@ def neighbour_count(initial_state, row, col, cell_type):
       elif initial_state[row + neighbour[0]][col + neighbour[1]] == 1 and cell_type == 0:
         cell_count = increment_count(cell_count)
   
-  print(cell_count, row, col, cell_type, initial_state)
+  # print(cell_count, row, col, cell_type, initial_state)
   return cell_count
 
 
