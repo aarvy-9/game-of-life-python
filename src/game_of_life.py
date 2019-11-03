@@ -28,6 +28,3 @@ def game_of_life(initial_state):
           next_generation[i][j] = 1
 
   return next_generation
-
-initial_state = [[0, 0, 0, 0], [0, 1, 1, 0], [0, 1, 1, 0], [0, 0, 0, 0]]
-print(game_of_life(initial_state))
