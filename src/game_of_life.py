@@ -3,8 +3,6 @@ def increment_count(count):
 
 def neighbour_count(initial_state, row, col, cell_type):
 
-  # cell count mutated in this function
-
   neighbours = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]
   cell_count = 0
 
@@ -15,14 +13,10 @@ def neighbour_count(initial_state, row, col, cell_type):
       elif initial_state[row + neighbour[0]][col + neighbour[1]] == 1 and cell_type == 0:
         cell_count = increment_count(cell_count)
   
-  # print(cell_count, row, col, cell_type, initial_state)
   return cell_count
 
 
 def game_of_life(initial_state):
-
-  # next_generation mutated in this function:
-  # For now created only for 1 next generation. can extend it to multiple geneations using a while loop
 
   next_generation = [[0 for col in range(len(initial_state[0]))] for row in range(len(initial_state))]
   
