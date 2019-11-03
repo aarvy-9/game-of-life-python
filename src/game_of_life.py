@@ -1,3 +1,6 @@
+def increment_count(count):
+  return count + 1
+
 def neighbour_count(initial_state, row, col, cell_type):
 
   # cell count mutated in this function
@@ -8,10 +11,11 @@ def neighbour_count(initial_state, row, col, cell_type):
   for neighbour in neighbours:
     if not (row + neighbour[0] < 0 or col + neighbour[1] < 0 or row + neighbour[0] > len(initial_state) - 1 or col + neighbour[1] > len(initial_state[0]) - 1):
       if initial_state[row + neighbour[0]][col + neighbour[1]] == 1 and cell_type == 1:
-        cell_count += 1
+        cell_count = increment_count(cell_count)
       elif initial_state[row + neighbour[0]][col + neighbour[1]] == 1 and cell_type == 0:
-        cell_count += 1
-    
+        cell_count = increment_count(cell_count)
+  
+  print(cell_count, row, col, cell_type, initial_state)
   return cell_count
 
 
