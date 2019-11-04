@@ -17,3 +17,5 @@ class GameOfLifeTest(unittest.TestCase):
 
   def test_game_of_life_dead_cell_neighbours_2(self):
     self.assertTrue(True, game_of_life.is_alive(0, 2))
+
+#Feedback: tests for when a cell would die
