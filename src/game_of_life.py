@@ -7,3 +7,5 @@ def is_alive(current_state, number_of_live_neighbors):
       return [True, number_of_live_neighbors]
   
   return [False, number_of_live_neighbors]
+
+#Feedback: return True or return False, no need to return number_of_live_neighbors
