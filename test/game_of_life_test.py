@@ -37,7 +37,8 @@ class GameOfLifeTest(unittest.TestCase):
 
   def test_game_of_life_dead_cell_neighbours_5(self):
     self.assertEqual(False, game_of_life.is_alive(False, 5))
-	
+
+#Feedback: code runs off and wraps	
   def test_generate_signals_2_3(self):
     self.assertEqual([(1, 2), (2, 2), (3, 2), (3, 3), (3, 4), (2, 4), (1, 3), (1, 2)], game_of_life.generate_signals(2, 3))
 	
