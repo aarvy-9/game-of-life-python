@@ -37,3 +37,12 @@ class GameOfLifeTest(unittest.TestCase):
 
   def test_game_of_life_dead_cell_neighbours_5(self):
     self.assertEqual(False, game_of_life.is_alive(False, 5))
+	
+  def test_generate_signals_2_3(self):
+    self.assertEqual([(1, 2), (2, 2), (3, 2), (3, 3), (3, 4), (2, 4), (1, 3), (1, 2)], game_of_life.generate_signals(2, 3))
+	
+  def test_generate_signals_1_4(self):
+    self.assertEqual([(0, 3), (1, 3), (2, 3), (2, 4), (2, 5), (1, 5), (0, 4), (0, 3)], game_of_life.generate_signals(1, 4))
+	
+  def test_generate_signals_0_0(self):
+    self.assertEqual([(-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 0), (-1, -1)], game_of_life.generate_signals(0, 0))
