@@ -40,10 +40,10 @@ class GameOfLifeTest(unittest.TestCase):
 
 #Feedback: code runs off and wraps	
   def test_generate_signals_2_3(self):
-    self.assertEqual([(1, 2), (2, 2), (3, 2), (3, 3), (3, 4), (2, 4), (1, 3), (1, 2)], game_of_life.generate_signals(2, 3))
+    self.assertEqual([(1, 2), (2, 2), (3, 2), (3, 3), (3, 4), (2, 4), (1, 3), (1, 2)], game_of_life.generate_signals((2, 3)))
 	
   def test_generate_signals_1_4(self):
-    self.assertEqual([(0, 3), (1, 3), (2, 3), (2, 4), (2, 5), (1, 5), (0, 4), (0, 3)], game_of_life.generate_signals(1, 4))
+    self.assertEqual([(0, 3), (1, 3), (2, 3), (2, 4), (2, 5), (1, 5), (0, 4), (0, 3)], game_of_life.generate_signals((1, 4)))
 	
   def test_generate_signals_0_0(self):
-    self.assertEqual([(-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 0), (-1, -1)], game_of_life.generate_signals(0, 0))
+    self.assertEqual([(-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 0), (-1, -1)], game_of_life.generate_signals((0, 0)))
