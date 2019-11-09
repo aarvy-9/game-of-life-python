@@ -1,4 +1,3 @@
-#Feedback: code is wrapping on multiple lines making it hard to read.
 def generate_signals(index):
   return [(index[0] - 1, index[1] - 1), (index[0] - 1, index[1]), (index[0] - 1, index[1] + 1), (index[0], index[1] - 1), (index[0], index[1] + 1), (index[0] + 1, index[1] - 1), (index[0] + 1, index[1]), (index[0] + 1, index[1] + 1)]
 
