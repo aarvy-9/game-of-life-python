@@ -7,11 +7,3 @@ def get_live_neighbours_count(universe, index):
 
 def is_alive(current_status, number_of_live_neighbors):
   return (number_of_live_neighbors == 2 and current_status) or number_of_live_neighbors == 3
-
-def main_function(universe):
-  for i in range(len(universe)):
-    for j in range(len(universe[0])):
-      is_alive(universe[i][j], get_live_neighbours_count(universe, (i, j)))
-
-
-main_function([[True, True, True], [True, True, True], [True, False, False]])

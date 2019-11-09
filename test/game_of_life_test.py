@@ -48,3 +48,9 @@ class GameOfLifeTest(unittest.TestCase):
 	
   def test_generate_signals_0_0(self):
     self.assertEqual([(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)], game_of_life.generate_signals((0, 0)))
+	
+  def test_count_live_neighbors_6(self):
+    self.assertEqual(6, game_of_life.get_live_neighbours_count([[True, True, True], [True, True, True], [True, False, False]], (1, 1)))
+	
+  def test_count_live_neighbors_2(self):
+    self.assertEqual(2, game_of_life.get_live_neighbours_count([[True, True, True], [True, True, True], [True, False, False]], (2, 2)))
