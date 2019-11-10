@@ -5,12 +5,12 @@ def generate_signals(i):
 
 
 def get_live_neighbours_count(universe, index):
-    valid_signals = filter(lambda x: 
-                           -1 not in x and (x[0] < len(universe)) and 
-                           (x[1] < len(universe[0])), 
-                           generate_signals(index))
-    return len(list(filter(lambda x: universe[x[0]][x[1]] == 1, 
-                           valid_signals)))
+    valid_signals = filter(lambda x: -1 not in x
+                                     and (x[0] < len(universe))
+                                     and (x[1] < len(universe[0]))
+                           , generate_signals(index))
+    return len(list(filter(lambda x: universe[x[0]][x[1]] == 1
+                           , valid_signals)))
 
 
 def is_alive(current_status, number_of_live_neighbors):
