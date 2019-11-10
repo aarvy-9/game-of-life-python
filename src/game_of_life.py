@@ -1,5 +1,7 @@
 def generate_signals(i):
-  return [(i[0] - 1, i[1] - 1), (i[0] - 1, i[1]), (i[0] - 1, i[1] + 1), (i[0], i[1] - 1), (i[0], i[1] + 1), (i[0] + 1, i[1] - 1), (i[0] + 1, i[1]), (i[0] + 1, i[1] + 1)]
+  return [(i[0] - 1, i[1] - 1), (i[0] - 1, i[1]), (i[0] - 1, i[1] + 1), 
+          (i[0], i[1] - 1), (i[0], i[1] + 1), 
+          (i[0] + 1, i[1] - 1), (i[0] + 1, i[1]), (i[0] + 1, i[1] + 1)]
 
 def get_live_neighbours_count(universe, index):
   valid_signals = filter(lambda x: -1 not in x and (x[0] < len(universe)) and (x[1] < len(universe[0])), generate_signals(index))
