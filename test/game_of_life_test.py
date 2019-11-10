@@ -41,32 +41,36 @@ class GameOfLifeTest(unittest.TestCase):
 
   def test_generate_signals_2_3(self):
     result = [(1, 2), (1, 3), (1, 4),
-              (2, 2), (2, 4),
-              (3, 2), (3, 3), (3, 4)]
+      (2, 2), (2, 4),
+      (3, 2), (3, 3), (3, 4)]
+      
     self.assertEqual(result, game_of_life.generate_signals((2, 3)))
 
   def test_generate_signals_1_4(self):
     result = [(0, 3), (0, 4), (0, 5),
-              (1, 3), (1, 5),
-              (2, 3), (2, 4), (2, 5)]
+      (1, 3), (1, 5),
+      (2, 3), (2, 4), (2, 5)]
+
     self.assertEqual(result, game_of_life.generate_signals((1, 4)))
 
   def test_generate_signals_0_0(self):
     result = [(-1, -1), (-1, 0), (-1, 1),
-              (0, -1), (0, 1),
-              (1, -1), (1, 0), (1, 1)]
+      (0, -1), (0, 1),
+      (1, -1), (1, 0), (1, 1)]
     self.assertEqual(result, game_of_life.generate_signals((0, 0)))
 
   def test_count_live_neighbors_6(self):
     universe = [[True, True, True],
-                [True, True, True],
-                [True, False, False]]
-    self.assertEqual(6, game_of_life.get_live_neighbours_count(universe,
-                                                               (1, 1)))
+      [True, True, True],
+      [True, False, False]]
+
+    self.assertEqual(6, #Feedback: fixed the format here
+      game_of_life.get_live_neighbours_count(universe, (1, 1)))
 
   def test_count_live_neighbors_2(self):
     universe = [[True, True, True],
-                [True, True, True],
-                [True, False, False]]
-    self.assertEqual(2, game_of_life.get_live_neighbours_count(universe,
-                                                               (2, 2)))
+      [True, True, True],
+      [True, False, False]]
+
+    self.assertEqual(2, #Feedback: fixed the format here
+      game_of_life.get_live_neighbours_count(universe, (2, 2)))
