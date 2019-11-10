@@ -61,10 +61,12 @@ class GameOfLifeTest(unittest.TestCase):
     universe = [[True, True, True],
                 [True, True, True],
                 [True, False, False]]
-    self.assertEqual(6, game_of_life.get_live_neighbours_count(universe, (1, 1)))
+    self.assertEqual(6, game_of_life.get_live_neighbours_count(universe,
+                                                               (1, 1)))
 
   def test_count_live_neighbors_2(self):
     universe = [[True, True, True],
                 [True, True, True],
                 [True, False, False]]
-    self.assertEqual(2, game_of_life.get_live_neighbours_count(universe, (2, 2)))
+    self.assertEqual(2, game_of_life.get_live_neighbours_count(universe,
+                                                               (2, 2)))
