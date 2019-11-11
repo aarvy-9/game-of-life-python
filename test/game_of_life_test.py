@@ -78,7 +78,9 @@ class GameOfLifeTest(unittest.TestCase):
 	  game_of_life.generate_signals_for_all_live_cells(live_cells))
 
   def test_count_signals_0(self):
-    self.assertEqual({}, game_of_life.count_signals([]))
+    signals = []
+    result = {}
+    self.assertEqual(result, game_of_life.count_signals(signals))
 
   def test_count_signals_1(self):
     signals = [(1, 2)]
