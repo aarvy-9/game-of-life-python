@@ -13,9 +13,7 @@ def generate_signals(live_cell):
     (x + 1, y - 1), (x + 1, y), (x + 1, y + 1)]
 	
 def generate_signals_for_all_live_cells(live_cells):
-  return reduce(operator.add, map(lambda x: generate_signals(x), live_cells))
-#Feedback: 
-#  return reduce(operator.add, map(generate_signals, live_cells))
+  return reduce(operator.add, map(generate_signals, live_cells))
 
 def count_signals(signals):
   return dict(Counter(signals))
