@@ -15,7 +15,6 @@ def generate_signals(live_cell):
 def generate_signals_for_all_live_cells(live_cells):
   return reduce(operator.add, map(lambda x: generate_signals(x), live_cells))
 
-def count_signlas(signals):
-  signals = map(tuple, signals)
+def count_signals(signals):
   return dict(Counter(signals))
   
