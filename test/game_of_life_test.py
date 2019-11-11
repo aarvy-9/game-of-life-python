@@ -2,7 +2,6 @@ import unittest
 
 from src import game_of_life
 
-
 class GameOfLifeTest(unittest.TestCase):
   def test_game_of_life_live_cell_neighbours_0(self):
     self.assertEqual(False, game_of_life.is_alive(True, 0))
