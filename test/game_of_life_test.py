@@ -95,3 +95,28 @@ class GameOfLifeTest(unittest.TestCase):
     signals = [(1, 2), (2, 1), (1, 2)]
     result = {(1, 2): 2, (2, 1): 1}
     self.assertEqual(result, game_of_life.count_signals(signals))
+
+  def test_next_generation_single_live_cell_input(self):
+    live_cells = [(0, 0)]
+    result = []
+    self.assertEqual(result, game_of_life.next_generation(live_cells))
+  
+  def test_next_generation_two_live_cell_input(self):
+    live_cells = [(0, 0), (0, 1)]
+    result = []
+    self.assertEqual(result, game_of_life.next_generation(live_cells))
+
+  def test_next_generation_block_input(self):
+    live_cells = [(0, 0), (0, 1), (1, 0), (1, 1)]
+    result = [(0, 1), (1, 0), (1, 1), (0, 0)]
+    self.assertEqual(result, game_of_life.next_generation(live_cells))
+
+  def test_next_generation_horizontal_blinker_input(self):
+    live_cells = [(0, 0), (0, 1), (0, 2)]
+    result = [(-1, 1), (0, 1), (1, 1)]
+    self.assertEqual(result, game_of_life.next_generation(live_cells))
+  
+  def test_next_generation_vertical_blinker_input(self):
+    live_cells = [(0, 1), (1, 1), (2, 1)]
+    result = [(1, 0), (1, 1), (1, 2)]
+    self.assertEqual(result, game_of_life.next_generation(live_cells))

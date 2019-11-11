@@ -17,4 +17,9 @@ def generate_signals_for_all_live_cells(live_cells):
 
 def count_signals(signals):
   return dict(Counter(signals))
-  
+
+def next_generation(live_cells):
+  all_live_signals = generate_signals_for_all_live_cells(live_cells)
+  signal_count = count_signals(all_live_signals)
+  return list(filter(lambda x: is_alive(x in live_cells, signal_count[x]), 
+                signal_count))
