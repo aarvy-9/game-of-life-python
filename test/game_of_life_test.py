@@ -75,3 +75,15 @@ class GameOfLifeTest(unittest.TestCase):
 	  (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
     self.assertEqual(result, 
 	  game_of_life.generate_signals_for_all_live_cells(live_cells))
+
+  def count_signals_0(self):
+    self.assertEqual({}, game_of_life.count_signals([]))
+  
+  def count_signals_1(self):
+    self.assertEqual({(1, 2): 2}, game_of_life.count_signals([[1, 2]]))
+  
+  def count_signals_2_same_position(self):
+    self.assertEqual({(1, 2): 2}, game_of_life.count_signals([[1, 2], [1, 2]]))
+  
+  def count_signals_3_2_same_position(self):
+    self.assertEqual({(1, 2): 2, (2, 1): 1}, [[1, 2], [2, 1], [1, 2]])
