@@ -24,14 +24,14 @@ def next_generation(live_cells):
   all_live_signals = generate_signals_for_all_live_cells(live_cells)
   signal_count = count_signals(all_live_signals)
   return list(filter(lambda x: is_alive(x in live_cells, signal_count[x]), 
-                signal_count))
-				
+                signal_count)) #Feedback: what does x mean?
+ 			
 def main():
   live_cells = [(0, 0), (0, 1), (0, 2)]
   while True:
     os.system('cls')
     print(live_cells)
-    live_cells = next_generation(live_cells)
+    live_cells = next_generation(live_cells) #Feedback: avoid mutation, honor immutability
     sleep(1)
 	
 if __name__ == 'main':
