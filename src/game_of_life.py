@@ -34,5 +34,6 @@ def main():
     live_cells = next_generation(live_cells)
     sleep(1)
 	
-main()
+if __name__ == 'main':
+  main()
   
