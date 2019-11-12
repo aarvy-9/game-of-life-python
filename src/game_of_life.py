@@ -26,14 +26,14 @@ def next_generation(live_cells):
   return list(filter(lambda x: is_alive(x in live_cells, signal_count[x]), 
                 signal_count)) #Feedback: what does x mean?
  			
-def main():
+def game_of_life():
   live_cells = [(0, 0), (0, 1), (0, 2)]
   while True:
     os.system('cls')
     print(live_cells)
     live_cells = next_generation(live_cells) #Feedback: avoid mutation, honor immutability
     sleep(1)
-	
-if __name__ == 'main':
-  main()
+
+if __name__ == '__main__':
+  game_of_life()
   

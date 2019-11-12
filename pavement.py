@@ -26,6 +26,11 @@ def clean():
   except:
     pass
   pass
+  
+@task
+def run():
+  sh('python3 ./src/game_of_life.py')
+  pass
 
 @task
 @needs(['setup', 'clean', 'test'])
