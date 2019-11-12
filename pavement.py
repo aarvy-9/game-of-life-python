@@ -8,7 +8,7 @@ import shutil
 
 @task
 def setup():
-  sh('python3 setup.py -q install')
+  sh('python setup.py -q install')
   pass
 
 @task
