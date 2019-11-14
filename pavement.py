@@ -8,7 +8,7 @@ import shutil
 
 @task
 def setup():
-  sh('python setup.py -q install')
+  sh('python3 setup.py -q install')
   pass
 
 @task
@@ -29,7 +29,7 @@ def clean():
   
 @task
 def run():
-  sh('python ./src/game_of_life.py')
+  sh('python3 ./src/game_of_life.py')
   pass
 
 @task
