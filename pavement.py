@@ -5,10 +5,11 @@ import paver.doctools
 import os
 import glob
 import shutil
+from time import sleep
 
 @task
 def setup():
-  sh('python3 setup.py -q install')
+  sh('python setup.py -q install')
   pass
 
 @task
@@ -29,7 +30,9 @@ def clean():
   
 @task
 def run():
-  sh('python3 ./src/game_of_life.py')
+  test()
+  sleep(2)
+  sh('python ./src/game_of_life.py')
   pass
 
 @task
