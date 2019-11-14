@@ -23,7 +23,8 @@ def count_signals(signals):
 
 def next_generation(live_cells):
   all_live_signals = generate_signals_for_all_live_cells(live_cells)
-  signal_count = count_signals(all_live_signals)
+  signal_count = count_signals(all_live_signals) 
+  #Feedback: let line runsoff. Also use consistent 2-space indentations
   return list(filter(lambda cell: is_alive(cell in live_cells, signal_count[cell]), 
                 signal_count))
 
