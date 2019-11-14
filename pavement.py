@@ -9,7 +9,7 @@ from time import sleep
 
 @task
 def setup():
-  sh('python setup.py -q install')
+  sh('python3 setup.py -q install')
   pass
 
 @task
@@ -32,7 +32,7 @@ def clean():
 def run():
   test()
   sleep(2)
-  sh('python ./src/game_of_life.py')
+  sh('python3 ./src/game_of_life.py')
   pass
 
 @task
