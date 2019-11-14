@@ -1,3 +1,4 @@
+from itertools import count
 from functools import reduce
 from collections import Counter
 import operator
@@ -23,25 +24,26 @@ def count_signals(signals):
 def next_generation(live_cells):
   all_live_signals = generate_signals_for_all_live_cells(live_cells)
   signal_count = count_signals(all_live_signals)
-  return list(filter(lambda x: is_alive(x in live_cells, signal_count[x]), 
-                signal_count)) # Feedback: what does x mean?
+  return list(filter(lambda cell: is_alive(cell in live_cells, signal_count[cell]), 
+                signal_count))
 
 def display(live_cells):
+  os.system('cls')
   print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
   x = [i[0] for i in live_cells]
   y = [i[1] for i in live_cells]
   min_, max_ = min(min(x), min(y)), max(max(x), max(y))
-  for i in range(min_ - 1, max_ + 1):
+  for i in range(min_, max_ + 1):
     print(''.join('X' if (i, j) in live_cells else ' ' 
-      for j in range(min_ - 1, max_ + 1)))
+      for j in range(min_, max_ + 1)))
+  sleep(1)
 
-def game_of_life():
-  live_cells = [(0, 0), (0, 1), (0, 2)]
-  while True:
-    os.system('cls')
-    display(live_cells)
-    live_cells = next_generation(live_cells) # Feedback: avoid mutation, honor immutability
-    sleep(1)
+def game_of_life(live_cells, y=0):
+  display(live_cells)
+  return next_generation(live_cells)
 
 if __name__ == '__main__':
-  game_of_life()
+  live_cells = [(0, 1), (1, 1), (2, 1)]
+  reduce(game_of_life, count(), live_cells)
+  
+
