@@ -27,8 +27,14 @@ def next_generation(live_cells):
   return list(filter(lambda cell: is_alive(cell in live_cells, signal_count[cell]), 
                 signal_count))
 
+def clear():
+  if os.name == 'nt':
+    os.system('cls')
+  else:
+    os.system('clear')
+
 def display(live_cells):
-  os.system('cls')
+  clear()
   print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
   x = [i[0] for i in live_cells]
   y = [i[1] for i in live_cells]
