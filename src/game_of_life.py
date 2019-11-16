@@ -35,9 +35,9 @@ def clear():
 def display(live_cells):
   clear()
   print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-  x = [i[0] for i in live_cells]
-  y = [i[1] for i in live_cells]
-  min_, max_ = min(min(x), min(y)), max(max(x), max(y))
+  x_axis = [i[0] for i in live_cells]
+  y_axis = [i[1] for i in live_cells]
+  min_, max_ = min(min(x_axis), min(y_axis)), max(max(x_axis), max(y_axis))
   for i in range(min_, max_ + 1):
     print(''.join('X' if (i, j) in live_cells else ' ' 
       for j in range(min_, max_ + 1)))
